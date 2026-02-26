@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 釣魚遊戲 WebGL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="ui-layer">
+        <div id="top-bar">
+            <div class="money-box">💰金幣: <span id="money">0</span></div>
+            <button id="btn-map" class="btn">在地圖切換釣點</button>
+        </div>
+
+        <div id="info-overlay">按下 SPACE 或 點擊畫面 拋竿</div>
+        <div id="message-overlay" style="display: none;">咬鉤了！按 SPACE！</div>
+
+        <div id="minigame-container">
+            <div id="fishing-bar-area">
+                <div id="fishing-bar"></div>
+                <div id="fishing-fish"></div>
+            </div>
+            <div id="fishing-progress-area">
+                <div id="fishing-progress"></div>
+            </div>
+            <div class="minigame-hint">長按/放開 空白鍵控制綠條<br>使紅點保持在綠條內！</div>
+        </div>
+
+        <!-- Map Modal -->
+        <div id="map-modal" class="modal">
+            <div class="modal-content">
+                <h2>選擇釣點</h2>
+                <div id="locations-list">
+                    <!-- injected via JS -->
+                </div>
+                <button id="btn-close-map" class="btn" style="margin-top: 20px; background: #f44336;">關閉</button>
+            </div>
+        </div>
+
+        <!-- Caught Modal -->
+        <div id="caught-modal" class="modal">
+            <div class="caught-content">
+                <h1>釣到了！</h1>
+                <h2 id="caught-name">魚名</h2>
+                <p id="caught-value" class="value-box">+0 金幣</p><br>
+                <button id="btn-caught-continue" class="btn" style="margin-top: 15px; font-size:20px;">繼續</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 載入 Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
